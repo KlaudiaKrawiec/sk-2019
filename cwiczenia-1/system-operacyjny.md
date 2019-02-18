@@ -9,16 +9,13 @@ Charakterystyka systemu operacyjnego
 | nazwa      | linux | centos 7 |
 | program (parametry sieci)      | niewiem |  |
 
-polecenie ip
+polecenie ip, nmcli show devices
 
 Konfiguracja połączenia sieciowego
 ----------------------------------
 | Parametr | wartość           | komentarzu |
 | ------------- |:-------------:| -----:|
-| Adres IP      | 10.0.2.15/24ipq
-
-
-| przydzielony przez DHCP |
+| Adres IP      | 10.0.2.15/24 | przydzielony przez DHCP |
 | Maska podsieci      |  |  |
 | Brama      |  |  |
 | DNS 1      | 10.10.0.8 |  |
