@@ -13,7 +13,6 @@ polecenie ip
 
 Konfiguracja połączenia sieciowego
 ----------------------------------
-
 | Parametr | wartość           | komentarzu |
 | ------------- |:-------------:| -----:|
 | Adres IP      | 10.0.2.15/24ipq
