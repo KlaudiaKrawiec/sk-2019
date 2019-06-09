@@ -15,12 +15,15 @@ Konfiguracja połączenia sieciowego
 ----------------------------------
 | Parametr | wartość           | komentarzu |
 | ------------- |:-------------:| -----:|
-| Adres IP      | 10.0.2.15/24 | przydzielony przez DHCP |
-| Maska podsieci      |  |  |
-| Brama      |  |  |
-| DNS 1      | 10.10.0.8 |  |
-| DNS 2      | 10.10.0.4 |  |
+| Adres IP      | 10.0.2.15 | przydzielony przez DHCP (Dynamic Host Configuration Protocol) |
+| Maska podsieci      | 255.255.255.0 | (24) |
+| Brama      | 10.0.2.1 | $ ip r |
+| DNS 1 (nameserver  (Domain Name System))      | 192.168.0.1 | cat /etc/resolv.conf |
+| DNS 2      |  |  brak|
 
+Połączenie z karta sięciową:
+$ nmcli
+$ dhclient enp0s3
 Schemat sieci
 -------------
 
