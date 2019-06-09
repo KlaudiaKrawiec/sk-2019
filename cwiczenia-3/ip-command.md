@@ -28,11 +28,43 @@ ip
 |   ``addr``    |                               | infirmacje o adresacji i własnościach interfejsów |
 |               |   ``ip addr``                 | informacja o wszystkich interfejsach              |
 |               |   ``ip addr show dev enp0s3`` | informacja o konkretnym interfejsie               |
+|               | ``ip addr add {ip} dev {nazwa}`` | dodaj ip (bez{})                               |
+|               | ``ip addr del {ip} dev {nazwa}`` |     usuń ip (bez{})                            |
 |   ``link``    |                               |  |
+|               | ``ip link set enp0s3 down``   |  wyłącz   |
+|               | ``ip link set {nazwa} up``    |  włącz    |
 |   ``route``   |  | |
-|   ``maddr``   |  | |
+|               | ``ip route show`` | pokazuje tablice routingu |
+|               |  ``ip route get {ip}``| pokazuje interfejs którym poleci pakiet |
+|               | ``ip route add default via {ip}`` | 	dodanie domyślnego adresu routingu |
+|         |``ip route del {ip}`` | |
+|        | ``ip route add {ip} via {ip}``| |
+|        | ``ip rotue add {ip} dev {nazwa}``| |
+|        | ``echo 1 > /proc/sys/net/ipv4/ip_forward``| włączanie forwardowania ip |
+|        | ``	/etc/sysctl.d/99-sysctl.conf``| odkomentować ipforwarding|
+|  ``maddr``    | 
 |   ``neigh``   |  | |
 |   ``help``    |  | |
+
+
+
+
+statyczny konfig
+
+nano /etc/network/interfaces
+
+allow-hotplug enp0s3
+iface enp0s3 inet static
+   address 192.168.100.1
+   netmask 255.255.255.0
+ 
+auto enp0s8
+iface enp0s8 inet static
+   address 192.168.200.1
+   netmask 255.255.255.0
+   up ip route add 192.168.0.0/24 via 192.168.200.2
+   down ip route del 192.168.0.0/24
+zresetować
 
 Zadanie
 ------------
