@@ -83,7 +83,7 @@ Warto wiedzieć
 -------------------------
 | Parametr | wartość | komentarz(opcionalny) |
 | ------------- |:-------------:| -----:|
-| Lokalizacja pliku z konfiguracją sieci| | |
+| Lokalizacja pliku z konfiguracją sieci|/etc/sysconfig/ | |
 | UP -> Wyłączenie interfejsu sieciowego| # ifup nazwa| |
 | DOWN -> Włączenie interfejsu sieciowego|# ifdown nazwa | |
 | Sprawdzenie obecnych parametrów | # nmcli | |
