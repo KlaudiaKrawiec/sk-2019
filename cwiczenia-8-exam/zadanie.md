@@ -50,6 +50,7 @@ face enp0s3 inet static
   address 172.22.160.2
   netmask 255.255.224.0
 up ip route add default via 172.22.160.1 ///routing
+
 4. Forwardowanie pakietów (PC0):
 ----------------
 echo 1 > /proc/sys/net/ipv4/ip_forward
