@@ -33,10 +33,12 @@ auto enp0s8
 iface enp0s8 inet static
   address 172.22.128.1
   netmask 255.255.254.0
+  
 atuo anp0s9
-iface enp0s9 inet static
+iface enp0s9 inet static  
   address 172.22.160.1
   netmask 255.255.224.0
+  
 3.Konfiguracja PC1 i PC2
 ----------------
 /etc/network/interfaces
