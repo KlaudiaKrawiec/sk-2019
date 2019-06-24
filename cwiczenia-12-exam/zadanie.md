@@ -55,12 +55,12 @@
 Podział sieci:
 ---------------
 Sieć w salach: ``188.156.220.160/28`` 
-  * Podsieć: ``10.10.0.0/16``
-  * Router: ``10.10.0.1/16``
+  * Podsieć: ``192.160.0.0/16``
+  * Router: ``192.160.0.1/16``
   
 WIFI: ``188.156.220.176/28`` 
-  * Podsieć: ``10.12.0.0/22``
-  * Router: ``10.12.0.1/22``
+  * Podsieć: ``192.162.0.0/22``
+  * Router: ``192.162.0.1/22``
 
 Poziom 2
 ------
@@ -74,14 +74,14 @@ Poziom 2
 
 | Numer sali | Adresacja |
 |:-----------|:------------|
-| sala ``201`` | ``10.10.201.0/26`` |
-| router sala ``201`` | ``10.10.0.2/26`` ``10.10.201.1/26`` |
-| sala ``202`` | ``20.20.202.0/26`` |
-| router sala ``202`` | ``10.10.0.3/26`` ``10.10.202.1/26`` |
-| sala ``203`` | ``20.20.203.0/26`` |
-| router sala ``203`` | ``10.10.0.4/26`` ``10.10.203.1/26`` |
-| sala ``204`` | ``20.20.204.0/26`` |
-| router sala ``204`` | ``10.10.0.5/26`` ``10.10.204.1/26`` |
+| sala ``201`` | ``192.160.201.0/26`` |
+| router sala ``201`` | ``192.160.0.2/26`` ``10.10.201.1/26`` |
+| sala ``202`` | ``192.160.202.0/26`` |
+| router sala ``202`` | ``192.160.0.3/26`` ``10.10.202.1/26`` |
+| sala ``203`` | ``192.160.203.0/26`` |
+| router sala ``203`` | ``192.160.0.4/26`` ``10.10.203.1/26`` |
+| sala ``204`` | ``192.160.204.0/26`` |
+| router sala ``204`` | ``192.160.0.5/26`` ``10.10.204.1/26`` |
 
 Poziom 1
 ------
@@ -91,14 +91,14 @@ Poziom 1
 
 | Numer sali | Adresacja |
 |:-----------|:------------|
-| sala ``115`` | ``10.10.115.0/26`` |
-| router sala ``115`` | ``10.10.0.6/26`` ``10.10.115.1/26`` |
-| sala ``116`` | ``20.20.116.0/26`` |
-| router sala ``116`` | ``10.10.0.6/26`` ``10.10.116.1/26`` |
-| sala ``117`` | ``20.20.117.0/26`` |
-| router sala ``117`` | ``10.10.0.7/26`` ``10.10.117.1/26`` |
-| sala ``122`` | ``20.20.122.0/26`` |
-| router sala ``122`` | ``10.10.0.8/26`` ``10.10.122.1/26`` |
+| sala ``115`` | ``192.160.115.0/26`` |
+| router sala ``115`` | ``192.160.0.6/26`` ``10.10.115.1/26`` |
+| sala ``116`` | ``192.160.116.0/26`` |
+| router sala ``116`` | ``192.160.0.6/26`` ``10.10.116.1/26`` |
+| sala ``117`` | ``192.160.117.0/26`` |
+| router sala ``117`` | ``192.160.0.7/26`` ``10.10.117.1/26`` |
+| sala ``122`` | ``192.160.122.0/26`` |
+| router sala ``122`` | ``192.160.0.8/26`` ``10.10.122.1/26`` |
 
 Poziom 0
 --------
@@ -113,21 +113,21 @@ Poziom 0
 
 | Numer sali | Adresacja |
 |:-----------|:------------|
-| sala ``009`` | ``10.10.9.0/26`` |
-| router sala ``009`` | ``10.10.0.9/26`` ``10.10.9.1/26`` |
-| sala ``013`` | ``20.20.13.0/26`` |
-| router sala ``013`` | ``10.10.0.10/26`` ``10.10.13.1/26`` |
-| sala ``014`` | ``20.20.14.0/26`` |
-| router sala ``014`` | ``10.10.0.11/26`` ``10.10.14.1/26`` |
-| sala ``017`` | ``20.20.17.0/26`` |
-| router sala ``017`` | ``10.10.0.12/26`` ``10.10.17.1/26`` |
+| sala ``009`` | ``192.160.9.0/26`` |
+| router sala ``009`` | ``192.160.0.9/26`` ``10.10.9.1/26`` |
+| sala ``013`` | ``192.160.13.0/26`` |
+| router sala ``013`` | ``192.160.0.10/26`` ``10.10.13.1/26`` |
+| sala ``014`` | ``192.160.14.0/26`` |
+| router sala ``014`` | ``192.160.0.11/26`` ``10.10.14.1/26`` |
+| sala ``017`` | ``192.160.17.0/26`` |
+| router sala ``017`` | ``192.160.0.12/26`` ``10.10.17.1/26`` |
 
 #### Łącznie stanowisk planowanych: 420
 
 Diagram DIA
 ----------
 
-![Zadanie_2](Zadania2.svg)
+![Zadanie_2]
 
 ---
 
@@ -163,7 +163,7 @@ iface enp0s3 inet static
   netmask 255.255.255.240
   gateway 188.156.220.177
 iface enp0s8 inet static
-  address 10.12.0.1
+  address 192.162.0.1
   netmask 255.255.252.0
   gateway 188.156.220.177 
 ```
@@ -182,16 +182,16 @@ Odkomentowujemy ``DHCPDv4_CONF``
 ##### W pliku ``/etc/dhcp/dhcpd.conf`` zapisujemy naszą konfiguracje podsiecie DHCP:
 
 ```
-subnet 10.12.0.0 netmask 255.255.252.0 {
-  option routers 10.12.0.1;
+subnet 192.162.0.0 netmask 255.255.252.0 {
+  option routers 192.162.0.1;
   option subnet-mask 255.255.252.0;
-  option domain-name-servers 10.12.0.1;
-  range 10.12.0.15 10.12.3.250;
+  option domain-name-servers 192.162.0.1;
+  range 192.162.0.15 192.162.3.250;
 }
 ```
 #### Routing:
 
-``ip route add default via 10.12.0.1``
+``ip route add default via 192.162.0.1``
 
 ### Ustawienie statycznych adresów IP dla routera dla sal oraz w konkretnej sali:
 
@@ -199,10 +199,10 @@ subnet 10.12.0.0 netmask 255.255.252.0 {
 auto enp0s3
 auto enp0s8
 iface enp0s3 inet static
-  address 10.10.0.2
+  address 192.160.0.2
   netmask 255.255.0.0
 iface enp0s8 inet static
-  address 10.10.115.1
+  address 192.160.115.1
   netmask 255.255.255.192
 ```
 
@@ -220,15 +220,15 @@ Odkomentowujemy ``DHCPDv4_CONF``
 ##### W pliku ``/etc/dhcp/dhcpd.conf`` zapisujemy naszą konfiguracje podsiecie DHCP:
 
 ```
-subnet 10.10.115.0 netmask 255.255.255.192 {
-  option routers 10.10.115.1;
+subnet 192.160.115.0 netmask 255.255.255.192 {
+  option routers 192.160.115.1;
   option subnet-mask 255.255.255.192;
-  option domain-name-servers 10.10.115.1;
-  range 10.10.115.2 10.10.115.63;
+  option domain-name-servers 192.160.115.1;
+  range 192.160.115.2 192.160.115.63;
 }
 ```
 #### Routing:
 
-``ip route add default via 10.10.0.1``
+``ip route add default via 192.160.0.1``
 
-``ip route add default via 10.10.115.1``
+``ip route add default via 192.160.115.1``
