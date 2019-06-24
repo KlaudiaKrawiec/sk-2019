@@ -1,6 +1,4 @@
-# Zadanie 2
 
-## Projekt sieci lokalnej dla jednostki dydaktycznej uniwersytetu
 
 # Zadanie 2
 
