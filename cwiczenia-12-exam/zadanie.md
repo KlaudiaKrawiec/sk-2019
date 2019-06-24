@@ -127,7 +127,7 @@ Poziom 0
 Diagram DIA
 ----------
 
-![Zadanie_2](Diagram2.jpg)
+![Zadanie_2](Diagram2.png)
 
 ---
 
