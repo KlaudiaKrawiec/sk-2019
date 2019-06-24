@@ -11,7 +11,7 @@ Zaproponuj rozwiązanie spełniające poniższe wymagania:
    * Przygotuj dokumentację powyższej architektury w formie graficznej w programie ``DIA``
  
  
- ![zadanie 1 ](Diagram-8-exam.jpg)
+ ![zadanie 1 ](Diagram1.jpg)
  
 1.Podział sieci
 ----------------
